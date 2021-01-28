@@ -8,22 +8,11 @@ import { useState } from 'react'
 
 
 const Navigation = (props) => {
-  const [navStyle, setNavstate] = useState('navbar fixed-top navbar-dark')
-
-
-
-  function changeNavColorBlack() {
-    setNavstate('navbar fixed-top navbar-light')
-  }
-
-  function changeNavColorWhite() {
-    setNavstate('navbar fixed-top navbar-dark')
-  }
-
+  const {changeNavColorBlack,changeNavColorWhite} = props;
 
     return (
         <div className={classes.Navigation}>
-    <Navbar className={navStyle}>
+    <Navbar className={props.navStyle}>
       <Navbar.Brand as={Link} to="/home" >Singing-Mama</Navbar.Brand>
       <Nav className="mr-auto">
       <Nav.Link as={Link} to="/home" onClick={changeNavColorWhite}>Home</Nav.Link>

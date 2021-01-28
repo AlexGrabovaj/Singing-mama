@@ -4,10 +4,8 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react'
 
 
-export default function Home() {
-
-    
-    
+export default function Home(props) {
+    const {changeNavColorBlack, changeNavColorWhite} = props;
 
     return (
     <div className={classes.Home}>
@@ -19,12 +17,12 @@ export default function Home() {
                 Make your child sensitive to music from the very beginning.
             </p>
             
-            <NavLink to={{
-                pathname:'/about',
-                aboutProps:{
-                    navColor: 'navbar fixed-top navbar-light'
-                }
-            }} type="button" className="btn btn-outline-primary" >Learn More</NavLink>           
+            <NavLink to={{pathname:'/about'}} 
+                onClick={changeNavColorBlack}
+                type="button" 
+                className="btn btn-outline-primary" >
+                    Learn More
+            </NavLink>           
         
 
         </main>
